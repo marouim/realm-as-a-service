@@ -98,3 +98,9 @@ https://keycloak-keycloak.apps.cy0ho9ko.eastus.aroapp.io/admin/realm-bu-1/consol
 Connecter en utilisant le mot de passe temporaire contenu dans le manifest realm-bu1.yaml. 
 
 ATTENTION: Le mot de passe dans le manifest n'est pas une bonne pratique. Il s'agit d'une configuration d'exemple pour laboratoire. 
+
+Résultat: 
+
+Lors de la connection admin au nouveau realm, ce nouveau realm n'a aucune visibilité sur les autres realm. Chacun des realm résident dans un keycloak commun. Seul l'administrateur de keycloak peut voir l'ensemble des realms. 
+
+NE PAS UTILISER CES EXEMPLES EN PRODUCTION. 
