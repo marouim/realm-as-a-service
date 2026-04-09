@@ -1,0 +1,24 @@
+# Ce manifest crée un nouveau realm avec un accès administrateur temporaire.
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: KeycloakRealmImport
+metadata:
+  name: realm-bu-1
+spec:
+  keycloakCRName: example-keycloak # Nom de votre ressource Keycloak (CRD)
+  realm:
+    realm: "realm-bu-1"
+    enabled: true
+    displayName: "Pour Business Unit 1"
+    users:
+      - username: "bu-1-admin"
+        enabled: true
+        email: "admin@my-realm.com"
+        firstName: "Admin"
+        lastName: "Local"
+        credentials:
+          - type: "password"
+            value: "InitialPassword123!" # !!! ATTENTION !!!
+            temporary: true
+        clientRoles:
+          realm-management:
+            - "realm-admin"
